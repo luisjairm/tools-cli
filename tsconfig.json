@@ -1,14 +1,15 @@
 {
   "compilerOptions": {
     "declaration": true,
-    "module": "ESNext",
+    "module": "NodeNext",
     "target": "ES2021",
     "skipLibCheck": false,
     "sourceMap": false,
     "strict": true,
     "useUnknownInCatchVariables": false,
-    "moduleResolution": "Node"
+    "moduleResolution": "NodeNext",
+    "allowArbitraryExtensions": true
   },
-  "include": ["actions", "bin", "commands", "lib"],
+  "include": ["bin", "src/commands", "src/lib"],
   "exclude": ["node_modules", "e2e"]
 }

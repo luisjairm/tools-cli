@@ -5,14 +5,14 @@ node_modules/
 *.map
 
 # output
-lib/**/*.js
-commands/**/*.js
-actions/**/*.js
+src/lib/**/*.js
+src/commands/**/*.js
+src/actions/**/*.js
 bin/**/*.js
-lib/**/*.d.ts
-commands/**/*.d.ts
-actions/**/*.d.ts
-bin/**/*.d.ts
+src/lib/**/*.d.ts
+src/commands/**/*.d.ts
+src/actions/**/*.d.ts
+src/bin/**/*.d.ts
 
 # configuration
 renovate.json
