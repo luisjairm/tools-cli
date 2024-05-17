@@ -1,5 +1,5 @@
 {
-  "name": "pdf-cli",
+  "name": "tools-cli",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "build": "tsc"
   },
   "bin": {
-    "pdf-cli": "bin/pdf.js"
+    "tools-cli": "bin/pdf.js"
   },
   "keywords": [],
   "author": "",
