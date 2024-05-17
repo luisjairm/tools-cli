@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "ESNext",
+    "target": "ES2021",
+    "skipLibCheck": false,
+    "sourceMap": false,
+    "strict": true,
+    "useUnknownInCatchVariables": false,
+    "moduleResolution": "Node"
+  },
+  "include": ["actions", "bin", "commands", "lib"],
+  "exclude": ["node_modules", "e2e"]
+}
