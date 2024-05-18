@@ -4,9 +4,10 @@ import inquirer from 'inquirer'
 export const pdf2img = async () => {
   await inquirer.prompt([
     {
-      type: 'input',
-      name: 'folderName',
-      message: 'Ingresa el nombre de la carpeta donde se encutra el pdf.\n La carpeta debe estar dentro de "Descargas'
+      type: 'list',
+      name: 'selectedFileName',
+      message: 'Selecciona el archivo que desa convertir',
+      choices: ['1', '2']
     }
   ]).then(res => {
     console.log(res)

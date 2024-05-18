@@ -10,6 +10,6 @@
     "moduleResolution": "NodeNext",
     "allowArbitraryExtensions": true
   },
-  "include": ["bin", "src/commands", "src/lib"],
+  "include": ["bin", "src/commands", "src/libs", "src/entities"],
   "exclude": ["node_modules", "e2e"]
 }

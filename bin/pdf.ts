@@ -2,6 +2,8 @@
 import { program } from 'commander'
 import inquirer from 'inquirer'
 import { pdf2img } from '../src/commands/pdf2img/pdf2img.js'
+import chalk from 'chalk'
+import { getPathFolderWorkSpace } from '../src/libs/FileSystem.js'
 
 const listTools = [
   { name: 'pdf2img', value: 'pdf2img', description: 'Convertir PDF a imágenes' },
@@ -18,7 +20,7 @@ program.action(async () => {
   await inquirer.prompt([
     {
       type: 'list',
-      message: 'Selecciona la herramienta',
+      message: chalk.yellow('Selecciona la herramienta'),
       name: 'selectedTool',
       choices: listTools.map(tool => ({
         name: `${tool.name} - ${tool.description}`,
@@ -27,8 +29,15 @@ program.action(async () => {
     }
   ]).then(async ({ selectedTool }: IResponsesPrompt) => {
     console.log(selectedTool)
+    getPathFolderWorkSpace()
 
-    await pdf2img()
+    switch (selectedTool) {
+      case 'pdf2img':
+        await pdf2img()
+        break
+      default:
+        console.log(chalk.red('Opción no reconocida'))
+    }
   })
 })
 
