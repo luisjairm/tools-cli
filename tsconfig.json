@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "declaration": true,
+    "declaration": false,
     "module": "NodeNext",
     "target": "ES2021",
     "skipLibCheck": false,

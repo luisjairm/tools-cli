@@ -4,21 +4,22 @@ import fs from 'fs'
 import chalk from 'chalk'
 import { ICreateFolderParams, IFolderExistParams, IGetFilesFromPathParams } from '../entities/FileSystem.js'
 
+export const PATH_FOLDER_WORKSPACE = path.resolve(homedir(), 'Documents/tools-cli')
+
 export const getFilesPdfFromPath = ({ folderName }: IGetFilesFromPathParams) => {
 
 }
 
-export const getPathFolderWorkSpace = () => {
-  const fullPathFolder = path.resolve(homedir(), 'Documents/tools-cli')
-  if (folderExist({ fullPath: fullPathFolder })) {
+export const createWordspace = () => {
+  if (folderExist({ fullPath: PATH_FOLDER_WORKSPACE })) {
     console.log(
       chalk.green('La carpeta ya existe. Verifique que los archivos se encuentren en ') +
-      chalk.blue(fullPathFolder)
+      chalk.blue(PATH_FOLDER_WORKSPACE)
     )
-    return fullPathFolder
+    return PATH_FOLDER_WORKSPACE
   }
 
-  const { success, folderPath } = createFolder({ fullPath: fullPathFolder })
+  const { success, folderPath } = createFolder({ fullPath: PATH_FOLDER_WORKSPACE })
   if (success) return folderPath
 }
 
