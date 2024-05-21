@@ -26,12 +26,16 @@ export const pdf2img = async ({ fileName }: IPdf2imgParams) => {
     chalk.red('No se pudo convertir el archivo')
     return
   }
-  console.log(chalk.yellow('Guardando'))
 
-  convertedResult.forEach((file, index) => {
-    const fullFileName = pathJoin({ basePath: folderPath, name: `${index + 1}-${fileName}.jpg` })
-    writeFileSync({ fullPathFileName: fullFileName, file })
-  })
+  for (let i = 0; i < convertedResult.length; i++) {
+    const name = `${i + 1}-${filename}.jpg`
+    console.log(
+      chalk.yellow('Guardando ') +
+      chalk.blue(name)
+    )
+    const fullFileName = pathJoin({ basePath: folderPath, name })
+    writeFileSync({ fullPathFileName: fullFileName, file: convertedResult[i] })
+  }
 
-  console.log(chalk.blue(`Guarado en ${folderPath}`))
+  console.log(chalk.blue(`Guardado en ${folderPath}`))
 }
