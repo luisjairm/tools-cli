@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 import { program } from 'commander'
 import inquirer from 'inquirer'
-import { pdf2img } from '../src/commands/pdf2img/pdf2img.js'
+import { pdf2imgCommand } from '../src/commands/pdf2img/pdf2img.js'
 import chalk from 'chalk'
 import { configureWorkspace } from '../src/actions/configureWorkspace.js'
 import { PATH_FOLDER_WORKSPACE, folderExist } from '../src/libs/FileSystem.js'
@@ -51,7 +51,7 @@ program.version('1.0.0').description('')
 
       switch (selectedTool) {
         case 'pdf2img':
-          await pdf2img()
+          await pdf2imgCommand()
           break
         default:
           console.log(chalk.red('Opción no reconocida'))
